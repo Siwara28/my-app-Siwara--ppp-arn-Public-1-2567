@@ -35,7 +35,7 @@ export default function Navdar() {
                 <a href="/evaluation">การประเมินโยบายสาธารณะ</a>
               </li>
               <li className="text-stone-600 hover:text-blue-600 hover:font-bold font-medium mx-4 my-1">
-                <a href="#">ติดต่อ</a>
+                <a href="/contactor">ติดต่อ</a>
               </li>
               <li className="text-blue-600 hover:text-white hover:bg-blue-600 mx-4 my-1 border-2 border-blue-600 px-2 rounded-2xl ">
                 <a href="#">LogIn</a>
