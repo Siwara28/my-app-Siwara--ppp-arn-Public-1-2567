@@ -42,19 +42,44 @@ export default function AddProduct() {
 
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center ml-24">
         <h1 className="font-bold py-10 text-2xl">Add New Product</h1>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <input
+      <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 ml-24">
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="first-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      ยุทธศาสตร์ชาติ
+    </label>
+    <div className="mt-2">
+    <input
           onChange={(e) => setName(e.target.value)}
           value={name}
           className="input input-bordered input-accent w-full max-w-xs"
           type="text"
           placeholder="Product Name"
         />
-
-        <input
+      {/* <input
+        type="text"
+        name="first-name"
+        id="first-name"
+        autoComplete="given-name"
+        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      /> */}
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      โครงการ
+    </label>
+    <div className="mt-2">
+    <input
           onChange={(e) => setImage(e.target.value)}
           value={image}
           className="input input-bordered input-accent w-full max-w-xs"
@@ -62,7 +87,17 @@ export default function AddProduct() {
           placeholder="/images/1.jpg"
           defaultValue="/images/1.jpg"
         />
-        <input
+      
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      หน่วยงานที่นำนโยบายไปปฏิบัติ
+    </label>
+    <input
           onChange={(e) => setPrice(e.target.value)}
           value={price}
           className="input input-bordered input-accent w-full max-w-xs"
@@ -70,14 +105,193 @@ export default function AddProduct() {
           placeholder="1"
           defaultValue="1"
         />
-        <input
+    <div className="mt-2">
+   
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      อีเมล
+    </label>
+    <div className="mt-2">
+    <input
           onChange={(e) => setCategory(e.target.value)}
           value={category}
           className="input input-bordered input-accent w-full max-w-xs"
           type="text"
           placeholder="Product Category"
         />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      โทรศัพท์
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      งบประมาณ(ล้านบาท)
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      ปีงบประมาณ
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      ผลประเมิณ
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      จุดแข็ง
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      จุดอ่อน
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      แนวทางเสริมจุดแข็ง
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      ข้อเสนอเเนะ
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+  <div className="sm:col-span-3">
+    <label
+      htmlFor="last-name"
+      className="block text-sm font-medium leading-6 text-gray-900"
+    >
+      Last name
+    </label>
+    <div className="mt-2">
+    <input
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+          placeholder="Product Category"
+        />
+    
+    </div>
+  </div>
+</div>
 
+        
         <button type="submit" className="btn btn-primary w-full max-w-xs">
           Add Product
         </button>

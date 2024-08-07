@@ -59,7 +59,7 @@ export default async function ProductsList() {
                 </th>
                 <td>
                   <div className="flex items-center gap-3">
-                    {/* <div className="avatar">
+                    <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <Image
                           src={element.image}
@@ -69,7 +69,7 @@ export default async function ProductsList() {
                           className="rounded-lg"
                         />
                       </div>
-                    </div> */}
+                    </div>
                     <div>
                       <div className="font-bold">{element.name}</div>
                     </div>
