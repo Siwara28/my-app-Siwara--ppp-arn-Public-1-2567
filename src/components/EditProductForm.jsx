@@ -4,11 +4,32 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function EditProductForm({ id, name, image, price, category }) {
+export default function EditProductForm({
+  id,
+  name,
+  project,
+  implementation,
+  email,
+  modiie,
+  budget,
+  year,
+  eveluation,
+  weak,
+  strength,
+  development,
+  suggestion,
+       }) {
   const [newName, setNewTitle] = useState(name);
-  const [newImage, setNewImage] = useState(image);
-  const [newPrice, setNewPrice] = useState(price);
-  const [newCategory, setNewCategory] = useState(category);
+  const [newProject, setNewProject] = useState(project);
+  const [newImplementation, setNewImplementation] = useState(implementation);
+  const [constEmail, setNewEmail] = useState(email);
+  const [constModiie, setNewModiie] = useState(modiie);
+  const [constBudget, setNewBudget] = useState(budget);
+  const [constYear, setNewYear] = useState(year);
+  const [constEveluation, setNewEveluation] = useState(eveluation);
+  const [constWeak, setNewWeak] = useState(weak);
+  const [constStrength, setNewStrength] = useState(strength);
+  const [constDevelopment, setNewDevelopment] = useState(defaulevelopment);
 
   const router = useRouter();
 
@@ -21,7 +42,7 @@ export default function EditProductForm({ id, name, image, price, category }) {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ newName, newImage, newPrice, newCategory }),
+        body: JSON.stringify({ newName, newProject, newImplementation, newEmail , newMobilele , newBudget , newYear , newEvaluation , newWeak , newStrength , newDevalopment , newSuggestion }),
       });
 
       if (!res.ok) {
@@ -49,23 +70,67 @@ export default function EditProductForm({ id, name, image, price, category }) {
         />
 
         <input
-          onChange={(e) => setNewImage(e.target.value)}
+          onChange={(e) => setNewProject(e.target.value)}
           value={newImage}
           className="input input-bordered input-accent w-full max-w-xs"
           type="text"
         />
         <input
-          onChange={(e) => setNewPrice(e.target.value)}
+          onChange={(e) => setNewImplementation(e.target.value)}
           value={newPrice}
           className="input input-bordered input-accent w-full max-w-xs"
           type="text"
         />
         <input
-          onChange={(e) => setNewCategory(e.target.value)}
+          onChange={(e) => setNewEmail(e.target.value)}
           value={newCategory}
           className="input input-bordered input-accent w-full max-w-xs"
           type="text"
         />
+        <input
+          onChange={(e) => setNewMobget(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewYear(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewEvaluation(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewWeak(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewStrength(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewDevalopment(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+        <input
+          onChange={(e) => setNewSuggestion(e.target.value)}
+          value={newCategory}
+          className="input input-bordered input-accent w-full max-w-xs"
+          type="text"
+        />
+       
+       
 
         <button className="btn btn-primary w-full max-w-xs">
           Update Product
