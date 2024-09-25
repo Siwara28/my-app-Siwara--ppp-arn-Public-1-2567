@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Button from "@mui/material/Button";
 
 export default function AddProduct() {
   const [name, setName] = useState("");
@@ -64,8 +65,15 @@ export default function AddProduct() {
 
   return (
     <>
-      <div className="flex justify-between items-center ml-24">
-        <h1 className="font-bold py-10 text-2xl">Add New Product</h1>
+      <div className="flex justify-center items-center">
+        <Button
+          variant="contained"
+          color="success"
+          className="font-bold px-20 py-3 mt-5"
+          size="large"
+        >
+          Add New Product
+        </Button>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 ml-24">
@@ -77,20 +85,37 @@ export default function AddProduct() {
               ยุทธศาสตร์ชาติ
             </label>
             <div className="mt-2">
-              <input
+              <select
+                className="input input-bordered input-accent w-full max-w-xs"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
-                className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
                 placeholder="ยุทธศาสตร์ชาติ"
-              />
-              {/* <input
-        type="text"
-        name="first-name"
-        id="first-name"
-        autoComplete="given-name"
-        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-      /> */}
+              >
+                <option disabled selected>
+                  ดัชนีแผนแม่บทด้านความมั่นคง
+                </option>
+                <option>ดัชนีสันติภาพโลก</option>
+                <option>ดัชนีความสุขโลก</option>
+                <option>ดัชนีสิทธิมนุษยชนและหลักนิติธรรม</option>
+                <option>ดัชนีสถาบันหลัก</option>
+                <option>ดัชนีเสถียรภาพทางการเมือง</option>
+                <option>ดัชนีการมีสิทธิ์เสียงของประชาชนและการรับผิดชอบ</option>
+                <option>ดัชนีปลอดภัยจากภัยคุกคาม</option>
+                <option>ดัชนีความสงบสุขภาคใต้</option>
+                <option>
+                  ดัชนีประสิทธิภาพของหน่อยงานด้านการข่าวและประชาคมข่าวกรอง
+                </option>
+                <option>ดัชนีความแข็งแกรงทางกำลังทหาร</option>
+                <option>ดัชนีรัฐเปาะบาง</option>
+                <option>
+                  ดัชนีจำนวนเป้าหมายย่อยของเป้าหมายการพัฒนาที่ยังยืนในเป้าหมายที่
+                  17 บรรลุตามที่กำหนด
+                </option>
+                <option>
+                  ดัชนีระดับประสิทธิ์ภาพการดำเนินงานของด้านการจัดการความมั่นคง
+                </option>
+              </select>
             </div>
           </div>
           <div className="sm:col-span-3">
@@ -106,8 +131,8 @@ export default function AddProduct() {
                 value={project}
                 className="input input-bordered input-accent w-full max-w-xs"
                 type="text"
-                placeholder="/images/1.jpg"
-                defaultValue="/images/1.jpg"
+                placeholder="โครงการ"
+                // defaultValue="/images/1.jpg"
               />
             </div>
           </div>
@@ -126,7 +151,6 @@ export default function AddProduct() {
               type="text"
               placeholder="หน่วยงานที่นำนโยบายไปฏิบัติ"
             />
-            </div>
           </div>
           <div className="sm:col-span-3">
             <label
@@ -135,15 +159,14 @@ export default function AddProduct() {
             >
               อีเมล
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="อีเมล"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="text"
+              placeholder="อีเมล"
+            />
           </div>
           <div className="sm:col-span-3">
             <label
@@ -152,15 +175,14 @@ export default function AddProduct() {
             >
               โทรศัพท์
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setMobile(e.target.value)}
-                value={mobile}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="โทรศัพท์"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <input
+              onChange={(e) => setMobile(e.target.value)}
+              value={mobile}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="number"
+              placeholder="โทรศัพท์"
+            />
           </div>
           <div className="sm:col-span-3">
             <label
@@ -169,15 +191,14 @@ export default function AddProduct() {
             >
               งบประมาณ(ล้านบาท)
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setBudget(e.target.value)}
-                value={budget}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="งบประมาณ"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <input
+              onChange={(e) => setBudget(e.target.value)}
+              value={budget}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="number"
+              placeholder="งบประมาณ(ล้านบาท)"
+            />
           </div>
           <div className="sm:col-span-3">
             <label
@@ -186,15 +207,14 @@ export default function AddProduct() {
             >
               ปีงบประมาณ
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setYear(e.target.value)}
-                value={year}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="ปีงบประมาณ"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <input
+              onChange={(e) => setYear(e.target.value)}
+              value={year}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="number"
+              placeholder="ปีงบประมาณ"
+            />
           </div>
           <div className="sm:col-span-3">
             <label
@@ -203,15 +223,14 @@ export default function AddProduct() {
             >
               ผลประเมิณ
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setEvaluation(e.target.value)}
-                value={evaluation}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="ผลประเมิณ"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <input
+              onChange={(e) => setEvaluation(e.target.value)}
+              value={evaluation}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="number"
+              placeholder="ผลประเมิณ"
+            />
           </div>
           <div className="sm:col-span-3">
             <label
@@ -220,15 +239,14 @@ export default function AddProduct() {
             >
               จุดอ่อน
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setWeak(e.target.value)}
-                value={weak}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="จุดอ่อน"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <textarea
+              onChange={(e) => setWeak(e.target.value)}
+              value={weak}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="text"
+              placeholder="จุดอ่อน"
+            />
           </div>
           <div className="sm:col-span-3">
             <label
@@ -237,53 +255,31 @@ export default function AddProduct() {
             >
               จุดแข็ง
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setStreangth(e.target.value)}
-                value={streangth}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="จดแข็ง"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <textarea
+              onChange={(e) => setStrength(e.target.value)}
+              value={strength}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="text"
+              placeholder="จุดแข็ง"
+            />
           </div>
-
           <div className="sm:col-span-3">
             <label
               htmlFor="last-name"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
-              แนวทางเสริมจุดแข็ง
+              แนวทางเสริม(จุดแข็ง)
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setDevelopment(e.target.value)}
-                value={development}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="แนวทางเสริมจุดแข็ง"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <textarea
+              onChange={(e) => setDevelopment(e.target.value)}
+              value={development}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="text"
+              placeholder="แนวทางเสริม(จุดแข็ง)"
+            />
           </div>
-          {/* <div className="sm:col-span-3">
-    <label
-      htmlFor="last-name"
-      className="block text-sm font-medium leading-6 text-gray-900"
-    >
-      ข้อที่ควรปรับปรุงจุดอ่อน
-    </label>
-    <div className="mt-2">
-    <input
-          onChange={(e) => setCategory(e.target.value)}
-          value={category}
-          className="input input-bordered input-accent w-full max-w-xs"
-          type="text"
-          placeholder="Product Category"
-        />
-    
-    </div>
- 
-  </div> */}
           <div className="sm:col-span-3">
             <label
               htmlFor="last-name"
@@ -291,25 +287,30 @@ export default function AddProduct() {
             >
               ข้อเสนอแนะ
             </label>
-            <div className="mt-2">
-              <input
-                onChange={(e) => setSuggestion(e.target.value)}
-                value={suggestion}
-                className="input input-bordered input-accent w-full max-w-xs"
-                type="text"
-                placeholder="ข้อเสนอแนะ"
-              />
-            </div>
+            <div className="mt-2"></div>
+            <textarea
+              onChange={(e) => setSuggestion(e.target.value)}
+              value={suggestion}
+              className="input input-bordered input-accent w-full max-w-xs"
+              type="text"
+              placeholder="ข้อเสอแนะ"
+            />
           </div>
         </div>
-        
-       <div className="flex justify-center items-center mt-10"
-        <button 
-        type="submit" 
-        className="btn btn-primary w-full max-w-xs ml-24"
+
+        {/* <button type="submit" className="btn btn-primary w-full max-w-xs">
+          Add Product
+        </button> */}
+        <Button
+          type="submit"
+          variant="contained"
+          color="success"
+          className="font-bold px-20 py-3"
+          size="large"
         >
           Add Product
-        </button>
+        </Button>
+        <div />
       </form>
     </>
   );

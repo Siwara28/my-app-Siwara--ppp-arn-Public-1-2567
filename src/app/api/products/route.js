@@ -29,7 +29,7 @@ export async function POST(request) {
   await Product.create({ 
     name,
     project, 
-    implementation,
+    iemplementation,
     email,
     mobile,
     budget,

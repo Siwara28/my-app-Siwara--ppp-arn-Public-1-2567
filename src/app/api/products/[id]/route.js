@@ -7,8 +7,8 @@ export async function PUT(request, { params }) {
   const { id } = params;
   const {
     newName: name,
-    newProject: project ,
-    newIemplementation: implementation,
+    newProject: project,
+    newImplementation: implementation,
     newEmail: email,
     newMobile: mobile,
     newBudget: budget,
@@ -21,7 +21,21 @@ export async function PUT(request, { params }) {
     newSuggestion: suggestion,
   } = await request.json();
   await connectMongoDB();
-  await Product.findByIdAndUpdate(id, { name,  project , iemplementation , email , mobile , budget , price , year , evaluation , weak , streangth , development , suggestion ,});
+  await Product.findByIdAndUpdate(id, {
+    name,
+    project,
+    implementation,
+    email,
+    mobile,
+    budget,
+    price,
+    year,
+    evaluation,
+    weak,
+    streangth,
+    development,
+    suggestion,
+  });
   return NextResponse.json({ message: "Product updated" }, { status: 200 });
 }
 

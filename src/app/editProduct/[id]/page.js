@@ -27,11 +27,10 @@ export default async function EditProduct({ params }) {
     email,
     mobile,
     budget,
-    price,
     year,
     evaluation,
     weak,
-    streangth,
+    strength,
     development,
     suggestion,
   } = product;
@@ -45,14 +44,12 @@ export default async function EditProduct({ params }) {
       email={email}
       mobile={mobile}
       budget={budget}
-      price={price}
       year={year}
       evaluation={evaluation}
       weak={weak}
-      streangth={streangth}
+      strength={strength}
       development={development}
       suggestion={suggestion}
-
     />
   );
 }

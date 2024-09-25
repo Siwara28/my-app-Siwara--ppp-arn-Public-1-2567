@@ -1,7 +1,11 @@
 //components\EditProductForm.jsx
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
-import Image from "next/image";
+// import Image from "next/image";
+import * as React from "react";
+// import Stack from '@mui/material/Stack';
+import Button from "@mui/material/Button";
+import EditIcon from "@mui/icons-material/Edit";
 
 const getProducts = async () => {
   try {
@@ -30,19 +34,22 @@ export default async function ProductsList() {
             การติดตามและประเมินผลยุทธศาสตร์ชาติ 20 ปี
           </h1>
         </div>
-        <div className="text-right">
-          <Link className="btn btn-primary" href={"/addProduct"}>
-            Add Product
+        <div className="text-left ml-16 ">
+          <Link href={"/addProduct"}>
+            <Button
+              variant="contained"
+              color="success"
+              className="font-bold"
+              size="large"
+            >
+              Add Product
+            </Button>
           </Link>
         </div>
         <table className="table">
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
+              <th>#</th>
               <th>ยุทธศาสต์ชาติ</th>
               <th>โครงการ</th>
               <th>หน่อยงานทีนำนโยบายไปปฏิบัติ</th>
@@ -59,31 +66,12 @@ export default async function ProductsList() {
             </tr>
           </thead>
           <tbody>
-            {products.map((element) => (
+            {products.map((element, index) => (
               <tr className="hover" key={element._id}>
-                <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <Image
-                          src={element.image}
-                          alt={element.name}
-                          width={80}
-                          height={80}
-                          className="rounded-lg"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{element.name}</div>
-                    </div>
-                  </div>
-                </td>
+                <th>{index + 1}</th>
+
+                <td>{element.name}</td>
+                <td>{element.project}</td>
                 <td>{element.implementation}</td>
                 <td>{element.email}</td>
                 <td>{element.mobile}</td>
@@ -92,13 +80,22 @@ export default async function ProductsList() {
                 <td>{element.evaluation}</td>
                 <td>{element.weak}</td>
                 <td>{element.strength}</td>
-                <td>{element.davelopment}</td>
+                <td>{element.development}</td>
                 <td>{element.suggestion}</td>
                 <th>
-                  <Link href={`/editProduct/${element._id}`}>
-                    <button className="btn btn-primary">Edit</button>
-                  </Link>
-                  <RemoveBtn id={element._id} />
+                  <div className="flex justify-center items-center">
+                    <Link href={`/editProduct/${element._id}`}>
+                      <Button
+                        variant="contained"
+                        color="success"
+                        className="m-2"
+                        size="large"
+                      >
+                        <EditIcon />
+                      </Button>
+                    </Link>
+                    <RemoveBtn id={element._id} />
+                  </div>
                 </th>
               </tr>
             ))}
